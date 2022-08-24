@@ -9,11 +9,11 @@ import NoResults from './NoResults'
 import { IUser } from '../types'
 
 interface IProps {
-  isPostingComment: boolean;
-  comment: string;
-  comments: IComment[];
-  setComment: Dispatch<SetStateAction<string>>;
-  addComment: (e: React.FormEvent) => void;
+  isPostingComment: boolean
+  comment: string
+  comments: IComment[]
+  setComment: Dispatch<SetStateAction<string>>
+  addComment: (e: React.FormEvent) => void
 }
 
 interface IComment {
