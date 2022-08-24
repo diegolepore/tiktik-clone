@@ -24,7 +24,7 @@ export default async function handler(
     const doc = req.body
 
     client.create(doc).then(() => {
-      res.status(200).json('video created');
+      res.status(200);
     })
   }
 
