@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { NextPage } from 'next'
-import { Video } from '../types'
+import { Post } from '../types'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
@@ -9,7 +9,7 @@ import { GoVerified } from 'react-icons/go';
 import { BsPlay } from 'react-icons/bs';
 
 interface IProps {
-  post: Video
+  post: Post
 }
 
 const VideoCard: NextPage<IProps> = ({ post: { postedBy, _id, caption, video } }) => {
@@ -28,6 +28,12 @@ const VideoCard: NextPage<IProps> = ({ post: { postedBy, _id, caption, video } }
       setIsPlaying(true);
     }
   };
+
+  useEffect(()=> {
+    if (videoRef?.current) {
+      videoRef.current.muted = isVideoMuted
+    }
+  }, [isVideoMuted])
 
   return (
     <div className='flex flex-col border-b-2 border-gray-200 pb-6'>

@@ -1,4 +1,4 @@
-export interface Video {
+export interface Post {
   caption: string;
   video: {
     asset: {

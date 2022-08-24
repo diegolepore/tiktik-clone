@@ -9,10 +9,12 @@ import { ImCancelCircle } from 'react-icons/im'
 import Discover from './Discover'
 import SuggestedAccounts from './SuggestedAccounts'
 import Footer from './Footer'
+import useAuthStore from '../store/authStore'
 
 const Sidebar = () => {
 
   const [showSidebar, setShowSidebar] = useState(true)
+  const { fetchAllUsers, allUsers }: any = useAuthStore();
 
   const userProfile = false
 
@@ -40,8 +42,8 @@ const Sidebar = () => {
 
           {!userProfile && (
             <div className='px-2 py-2 hidden xl:block'>
-              <p className='text-gray-400'>Log in to like and comment videos</p>
-              <div className='pr-4'>
+              {/* <p className='text-gray-400'>Log in to like and comment videos</p> */}
+              {/* <div className='pr-4'>
                 <GoogleLogin
                   clientId=''
                   render={ (renderProps) => (
@@ -59,7 +61,7 @@ const Sidebar = () => {
                   onFailure={()=> {}}
                   cookiePolicy="single_host_origin"
                 />
-              </div>
+              </div> */}
             </div>
           )}
 
